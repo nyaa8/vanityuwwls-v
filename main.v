@@ -10,6 +10,11 @@ fn vanity_template(path string) string {
 }
 
 fn callback(req picohttpparser.Request, mut res picohttpparser.Response) {
+    if picohttpparser.cmp(req.path, '/') {
+        res.http_404()
+        return
+    }
+
     res.http_ok()
     res.header_server()
     res.html()

@@ -1,6 +1,8 @@
 # 🔮 vanityuwwls-v
 Use custom domains for Go modules! Rewritten in vlang. For fun.
 
+I-if you want to use it - change the constant variables in [`main.v`](./main.v) >///<
+
 ## 🙌 Contributing
 
 I-if you want to, I w-would be very grateful. P-please write commit messages according to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) 😊

@@ -15,7 +15,8 @@ fn vanity_template(path string) string {
 }
 
 fn callback(req picohttpparser.Request, mut res picohttpparser.Response) {
-    if picohttpparser.cmp(req.path, '/') {
+    package_path := req.path.trim_suffix('?go-get=1')
+    if picohttpparser.cmp(package_path, '/') {
         res.http_404()
         return
     }
@@ -23,7 +24,7 @@ fn callback(req picohttpparser.Request, mut res picohttpparser.Response) {
     res.http_ok()
     res.header_server()
     res.html()
-    res.body(vanity_template(req.path))
+    res.body(vanity_template(package_path))
 }
 
 fn main() {

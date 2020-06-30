@@ -11,7 +11,7 @@ const (
 
 [inline]
 fn vanity_template(path string) string {
-    return '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${path[1..]}</title><meta name="go-import" content="$module_domain$path git github.com/$github_account$path"><meta name="go-source" content="github.com/$github_account$path _ github.com/$github_account$path/tree/{/dir} github.com/$github_account$path/blob/{/dir}/{file}#L{line}"></head><body><a href="https://github.com/$github_account$path" style="font-family: monospace">$module_domain$path</a></body></html>'
+    return '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${path[1..]}</title><meta name="go-import" content="$module_domain$path git https://github.com/$github_account$path"><meta name="go-source" content="https://github.com/$github_account$path _ https://github.com/$github_account$path/tree/{/dir} https://github.com/$github_account$path/blob/{/dir}/{file}#L{line}"></head><body><a href="https://github.com/$github_account$path" style="font-family: monospace">$module_domain$path</a></body></html>'
 }
 
 fn callback(req picohttpparser.Request, mut res picohttpparser.Response) {
